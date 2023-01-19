@@ -17,7 +17,7 @@ https://main.cartoonnetworkkorea.com/program/schedule.php
 https://main.cartoonnetworkkorea.com/program/schedule.php?ymd=20230119
 ?ymd=(20230119) -> yyyymmdd
 
-sbs kizmom , 닉켈로디언
+sbs kizmom , 니켈로디언
 https://sbsmedianet.sbs.co.kr/schedule.html?channel=kizmom -> Nick == kizmom 둘다 되는듯
 https://sbsmedianet.sbs.co.kr/schedule.html?channel=Nick&pmDate=20230119
 &pmDate=(20230119) -> yyyymmdd
