@@ -21,17 +21,18 @@ chrome_options.add_argument('disable-gpu') # 하드웨어 가속 안함
 
 # UserAgent값을 바꿔줍시다!
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36")
+# 방송국이름_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+# 드라이버는 방송국 마다 생성해야함
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
-
+# 재능TV
+jeitv_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 url = "https://www.jeitv.com/bbs/board.php?bo_table=every"
-
-driver.get(url)
+jeitv_driver.get(url)
 
 # 페이지 로딩 될때 까지 10초 대기 (로딩이 완료되면 즉시 다음 코드 실행)
-driver.implicitly_wait(10)
+jeitv_driver.implicitly_wait(10)
 
-element = driver.find_element(By.TAG_NAME, "tbody")
+element = jeitv_driver.find_element(By.TAG_NAME, "tbody")
 jeitv = element.find_elements(By.TAG_NAME, "tr")
 
 program_timelist = []
@@ -48,7 +49,7 @@ for i in jeitv:
     program_titlelist.append(program_title)
     film_ratinglist.append(film_rating)
 
-driver.quit()
+jeitv_driver.quit()
 
 # dataframe으로 변환
 data = {"방송시간" : program_timelist,"프로그램 정보":program_titlelist, "등급":film_ratinglist}
@@ -57,5 +58,37 @@ df = pd.DataFrame(data)
 
 # dataframe을 csv파일로 내보내기
 file_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-
 df.to_csv("jeitv "+ file_date +".csv", encoding = "utf-8-sig")
+
+
+# KBS 키즈
+kbsn_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+url = "http://www.kbsn.co.kr/schedule/index?dt=&ch=KIDS"
+kbsn_driver.get(url)
+
+# 페이지 로딩 될때 까지 10초 대기 (로딩이 완료되면 즉시 다음 코드 실행)
+kbsn_driver.implicitly_wait(10)
+
+element = kbsn_driver.find_element(By.CLASS_NAME, "schedule_list")
+kbsn = element.find_elements(By.TAG_NAME, "li")
+
+program_timelist = []
+program_titlelist = []
+
+for program in kbsn:
+    program_time = program.find_element(By.CLASS_NAME, "time").text
+    program_title = program.find_element(By.CLASS_NAME, "title").text.replace("\n", " ")
+
+    program_timelist.append(program_time)
+    program_titlelist.append(program_title)
+
+kbsn_driver.quit()
+
+# dataframe으로 변환
+data = {"방송시간" : program_timelist,"프로그램 정보":program_titlelist}
+df = pd.DataFrame(data)
+# print(df.head(len(kbsn)))
+
+# dataframe을 csv파일로 내보내기
+file_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+df.to_csv("kbsn "+ file_date +".csv", encoding = "utf-8-sig")

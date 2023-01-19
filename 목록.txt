@@ -1,0 +1,36 @@
+재능TV
+https://www.jeitv.com/bbs/board.php?bo_table=every
+https://www.jeitv.com/bbs/board.php?bo_table=every&day=2023-01-19
+day=(2023-01-19) -> yyyy-mm-dd
+
+KBS 키즈
+http://www.kbsn.co.kr/schedule/index?dt=&ch=KIDS
+http://www.kbsn.co.kr/schedule/index?dt=20230119&ch=KIDS
+dt=(20230119) -> yyyymmdd
+
+투니버스
+https://tooniverse.cjenm.com/ko/schedule/
+※ 주소 형식 변경, 동적, 셀레니움으로 클릭해서 땡겨 오게 하든지 해야 할듯
+
+카툰네트워크
+https://main.cartoonnetworkkorea.com/program/schedule.php
+https://main.cartoonnetworkkorea.com/program/schedule.php?ymd=20230119
+?ymd=(20230119) -> yyyymmdd
+
+sbs kizmom , 닉켈로디언
+https://sbsmedianet.sbs.co.kr/schedule.html?channel=kizmom -> Nick == kizmom 둘다 되는듯
+https://sbsmedianet.sbs.co.kr/schedule.html?channel=Nick&pmDate=20230119
+&pmDate=(20230119) -> yyyymmdd
+
+EBSKIDS
+https://www.ebs.co.kr/schedule?channelCd=EBSU&onor=EBSU
+https://www.ebs.co.kr/schedule?channelCd=EBSU&onor=EBSU&date=20230119
+&date=(20230119) -> yyyymmdd
+
+챔프TV
+https://www.champtv.com/schedule/daily/daily.asp
+https://www.champtv.com/schedule/daily/daily.asp?show_date=2023-01-19
+?show_date=(2023-01-19) -> yyyy-mm-dd
+
+
+
