@@ -132,7 +132,7 @@ file_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
 df.to_csv("tooniverse "+ file_date +".csv", encoding = "utf-8-sig")
 
 
-# 카툰네트워크
+""" # 카툰네트워크 - 네이버로 옮김
 cartoonnetwork_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 url = "https://main.cartoonnetworkkorea.com/program/schedule.php"
 cartoonnetwork_driver.get(url)
@@ -169,7 +169,7 @@ df = pd.DataFrame(data)
 
 # dataframe을 csv파일로 내보내기
 file_date = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-df.to_csv("cartoonnetwork "+ file_date +".csv", encoding = "utf-8-sig")
+df.to_csv("cartoonnetwork "+ file_date +".csv", encoding = "utf-8-sig") """
 
 
 # sbs kizmom , 니켈로디언
